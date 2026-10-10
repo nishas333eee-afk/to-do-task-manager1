@@ -1,0 +1,12 @@
+{
+  "name": "todo-task-manager",
+  "version": "1.0.0",
+  "description": "A responsive Todo Task Manager",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

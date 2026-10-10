@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - Todo Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">✓</div>
+      <div>
+        <h1>TaskFlow</h1>
+        <p>Your personal task manager</p>
+      </div>
+    </header>
+
+    <section class="welcome">
+      <p class="eyebrow">YOUR WORKSPACE</p>
+      <h2>Stay focused. Get things done.</h2>
+      <p>Organize your day, one task at a time.</p>
+    </section>
+
+    <section class="stats">
+      <div class="stat-card">
+        <span>Total Tasks</span>
+        <strong id="totalTasks">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Completed</span>
+        <strong id="completedTasks">0</strong>
+      </div>
+      <div class="stat-card">
+        <span>Pending</span>
+        <strong id="pendingTasks">0</strong>
+      </div>
+    </section>
+
+    <section class="task-panel">
+      <h2 id="formTitle">Add New Task</h2>
+
+      <form id="taskForm">
+        <input type="hidden" id="taskId">
+
+        <label for="taskInput">Task name</label>
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="What do you need to do?"
+          maxlength="150"
+          required
+        >
+
+        <div class="form-row">
+          <div>
+            <label for="priority">Priority</label>
+            <select id="priority">
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="dueDate">Due date</label>
+            <input type="date" id="dueDate">
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submitBtn" class="primary-btn">
+            + Add Task
+          </button>
+          <button type="button" id="cancelEdit" class="secondary-btn hidden">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="list-panel">
+      <div class="list-heading">
+        <h2>My Tasks</h2>
+        <span id="taskCount">0 tasks</span>
+      </div>
+
+      <input
+        type="search"
+        id="searchInput"
+        class="search"
+        placeholder="Search your tasks..."
+      >
+
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pending">Pending</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+
+      <div id="taskList" class="task-list"></div>
+
+      <p id="emptyMessage" class="empty-message">
+        No tasks yet. Add your first task above!
+      </p>
+
+      <button id="clearCompleted" class="clear-btn">
+        Clear Completed Tasks
+      </button>
+    </section>
+
+    <footer>TaskFlow © 2026 · Plan your day, your way.</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
